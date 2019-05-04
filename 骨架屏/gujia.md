@@ -267,22 +267,6 @@ renderer.renderToString({}, (err, html) => {
   </body>
 </html>
 ```
-可以看到，骨架屏的样式通过<style></style>标签直接被插入，而骨架屏的内容也被放置在div#app之间。当然，我们还可以进一步处理，把这些内容都压缩一下。改写skeleton.js，在里面添加html-minifier：
-```html
-...
-
-+ const htmlMinifier = require('html-minifier')
-
-...
-
-renderer.renderToString({}, (err, html) => {
-+  html = htmlMinifier.minify(html, {
-+    collapseWhitespace: true,
-+    minifyCSS: true
-+  })
-  fs.writeFileSync('index.html', html, 'utf-8')
-})
-```
 来看看效果：
 
 ![head](image/4.gif)

@@ -17,11 +17,8 @@
         <entry file="file://$PROJECT_DIR$/gujia.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="484">
-                <caret line="287" column="20" lean-forward="true" selection-start-line="287" selection-start-column="20" selection-end-line="287" selection-end-column="20" />
-                <folding>
-                  <element signature="e#0#21#0" expanded="true" />
-                </folding>
+              <first_editor relative-caret-position="510">
+                <caret line="288" lean-forward="true" selection-start-line="288" selection-end-line="288" />
               </first_editor>
               <second_editor />
             </state>
@@ -65,6 +62,11 @@
               <item name="骨架屏" type="462c0819:PsiDirectoryNode" />
               <item name="image" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="骨架屏" type="b2602c69:ProjectViewProjectNode" />
+              <item name="骨架屏" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-skeleton" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -74,7 +76,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-skeleton" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -109,17 +111,19 @@
       <workItem from="1555924529894" duration="1119000" />
       <workItem from="1555980299847" duration="66000" />
       <workItem from="1556247612576" duration="5881000" />
+      <workItem from="1556939602709" duration="14000" />
+      <workItem from="1556940906425" duration="338000" />
+      <workItem from="1556942179756" duration="385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10561000" />
+    <option name="totallyTimeSpent" value="11298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12961012" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12961012" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -145,11 +149,8 @@
     <entry file="file://$PROJECT_DIR$/gujia.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="484">
-            <caret line="287" column="20" lean-forward="true" selection-start-line="287" selection-start-column="20" selection-end-line="287" selection-end-column="20" />
-            <folding>
-              <element signature="e#0#21#0" expanded="true" />
-            </folding>
+          <first_editor relative-caret-position="510">
+            <caret line="288" lean-forward="true" selection-start-line="288" selection-end-line="288" />
           </first_editor>
           <second_editor />
         </state>
