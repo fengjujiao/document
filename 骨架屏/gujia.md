@@ -270,3 +270,4 @@ renderer.renderToString({}, (err, html) => {
 来看看效果：
 
 ![head](image/4.gif)
+![head](image/5.png)
