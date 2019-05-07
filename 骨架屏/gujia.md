@@ -204,68 +204,61 @@ renderer.renderToString({}, (err, html) => {
 ```
 接下来，只要运行node skeleton.js，就可以完成骨架屏的注入了。运行效果如下：
 ```html
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>vue-skeleton</title>
-  <style data-vue-ssr-id="742d88be:0">
-.skeleton {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  padding: 15px;
-  box-sizing: border-box;
-  background: #fff;
-}
-.skeleton-nav {
-  height: 45px;
-  background: #eee;
-  margin-bottom: 15px;
-}
-.skeleton-swiper {
-  height: 160px;
-  background: #eee;
-  margin-bottom: 15px;
-}
-.skeleton-tabs {
-  list-style: none;
-  padding: 0;
-  margin: 0 -15px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.skeleton-tabs-item {
-  width: 25%;
-  height: 55px;
-  box-sizing: border-box;
-  text-align: center;
-  margin-bottom: 15px;
-}
-.skeleton-tabs-item span {
-  display: inline-block;
-  width: 55px;
-  height: 55px;
-  border-radius: 55px;
-  background: #eee;
-}
-.skeleton-banner {
-  height: 60px;
-  background: #eee;
-  margin-bottom: 15px;
-}
-.skeleton-productions {
-  height: 20px;
-  margin-bottom: 15px;
-  background: #eee;
-}
-</style></head>
-  <body>
-    <div id="app">
-      <div data-server-rendered="true" class="skeleton page"><div class="skeleton-nav"></div> <div class="skeleton-swiper"></div> <ul class="skeleton-tabs"><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li></ul> <div class="skeleton-banner"></div> <div class="skeleton-productions"></div><div class="skeleton-productions"></div><div class="skeleton-productions"></div><div class="skeleton-productions"></div><div class="skeleton-productions"></div><div class="skeleton-productions"></div></div>
+<template>
+  <div class="skeleton">
+    <div class="skeleton-head"></div>
+    <div class="skeleton-body">
+      <div class="skeleton-title"></div>
+      <div class="skeleton-content"></div>
     </div>
-    <script src="/dist/build.js"></script>
-  </body>
-</html>
+  </div>
+</template>
+<style>
+  .skeleton {
+    padding: 10px;
+  }
+
+  .skeleton .skeleton-head,
+  .skeleton .skeleton-title,
+  .skeleton .skeleton-content {
+    background: rgb(194, 207, 214);
+  }
+
+  .skeleton-head {
+    width: 100px;
+    height: 100px;
+    float: left;
+  }
+
+  .skeleton-body {
+    margin-left: 110px;
+  }
+
+  .skeleton-title {
+    width: 500px;
+    height: 60px;
+    transform-origin: left;
+    animation: skeleton-stretch .5s linear infinite alternate;
+  }
+
+  .skeleton-content {
+    width: 260px;
+    height: 30px;
+    margin-top: 10px;
+    transform-origin: left;
+    animation: skeleton-stretch .5s -.3s linear infinite alternate;
+  }
+
+  @keyframes skeleton-stretch {
+    from {
+      transform: scalex(1);
+    }
+    to {
+      transform: scalex(.3);
+    }
+  }
+</style>
+
 ```
 来看看效果：
 
