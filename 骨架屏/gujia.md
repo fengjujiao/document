@@ -45,67 +45,59 @@
 首先，我们在`/src`目录下新建一个`Skeleton.vue`文件，其内容如下：
 ````html
 <template>
-  <div class="skeleton page">
-    <div class="skeleton-nav"></div>
-    <div class="skeleton-swiper"></div>
-    <ul class="skeleton-tabs">
-      <li v-for="i in 8" class="skeleton-tabs-item"><span></span></li>
-    </ul>
-    <div class="skeleton-banner"></div>
-    <div v-for="i in 6" class="skeleton-productions"></div>
+  <div class="skeleton">
+    <div class="skeleton-head"></div>
+    <div class="skeleton-body">
+      <div class="skeleton-title"></div>
+      <div class="skeleton-content"></div>
+    </div>
   </div>
 </template>
 
 <style>
-.skeleton {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  padding: 15px;
-  box-sizing: border-box;
-  background: #fff;
-}
-.skeleton-nav {
-  height: 45px;
-  background: #eee;
-  margin-bottom: 15px;
-}
-.skeleton-swiper {
-  height: 160px;
-  background: #eee;
-  margin-bottom: 15px;
-}
-.skeleton-tabs {
-  list-style: none;
-  padding: 0;
-  margin: 0 -15px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.skeleton-tabs-item {
-  width: 25%;
-  height: 55px;
-  box-sizing: border-box;
-  text-align: center;
-  margin-bottom: 15px;
-}
-.skeleton-tabs-item span {
-  display: inline-block;
-  width: 55px;
-  height: 55px;
-  border-radius: 55px;
-  background: #eee;
-}
-.skeleton-banner {
-  height: 60px;
-  background: #eee;
-  margin-bottom: 15px;
-}
-.skeleton-productions {
-  height: 20px;
-  margin-bottom: 15px;
-  background: #eee;
-}
+  .skeleton {
+    padding: 10px;
+  }
+
+  .skeleton .skeleton-head,
+  .skeleton .skeleton-title,
+  .skeleton .skeleton-content {
+    background: rgb(194, 207, 214);
+  }
+
+  .skeleton-head {
+    width: 100px;
+    height: 100px;
+    float: left;
+  }
+
+  .skeleton-body {
+    margin-left: 110px;
+  }
+
+  .skeleton-title {
+    width: 500px;
+    height: 60px;
+    transform-origin: left;
+    animation: skeleton-stretch .5s linear infinite alternate;
+  }
+
+  .skeleton-content {
+    width: 260px;
+    height: 30px;
+    margin-top: 10px;
+    transform-origin: left;
+    animation: skeleton-stretch .5s -.3s linear infinite alternate;
+  }
+
+  @keyframes skeleton-stretch {
+    from {
+      transform: scalex(1);
+    }
+    to {
+      transform: scalex(.3);
+    }
+  }
 </style>
 ````
 接下来，再新建一个skeleton.entry.js入口文件：
@@ -204,65 +196,54 @@ renderer.renderToString({}, (err, html) => {
 ```
 接下来，只要运行node skeleton.js，就可以完成骨架屏的注入了。运行效果如下：
 ```html
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>vue-skeleton</title>
-  <style data-vue-ssr-id="742d88be:0">
+  <style data-vue-ssr-id="cf7fd5a4:0">
 .skeleton {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  padding: 15px;
-  box-sizing: border-box;
-  background: #fff;
+  padding: 10px;
 }
-.skeleton-nav {
-  height: 45px;
-  background: #eee;
-  margin-bottom: 15px;
+.skeleton .skeleton-head,
+.skeleton .skeleton-title,
+.skeleton .skeleton-content {
+  background: rgb(194, 207, 214);
 }
-.skeleton-swiper {
-  height: 160px;
-  background: #eee;
-  margin-bottom: 15px;
+.skeleton-head {
+  width: 100px;
+  height: 100px;
+  float: left;
 }
-.skeleton-tabs {
-  list-style: none;
-  padding: 0;
-  margin: 0 -15px;
-  display: flex;
-  flex-wrap: wrap;
+.skeleton-body {
+  margin-left: 110px;
 }
-.skeleton-tabs-item {
-  width: 25%;
-  height: 55px;
-  box-sizing: border-box;
-  text-align: center;
-  margin-bottom: 15px;
-}
-.skeleton-tabs-item span {
-  display: inline-block;
-  width: 55px;
-  height: 55px;
-  border-radius: 55px;
-  background: #eee;
-}
-.skeleton-banner {
+.skeleton-title {
+  width: 500px;
   height: 60px;
-  background: #eee;
-  margin-bottom: 15px;
+  transform-origin: left;
+  animation: skeleton-stretch .5s linear infinite alternate;
 }
-.skeleton-productions {
-  height: 20px;
-  margin-bottom: 15px;
-  background: #eee;
+.skeleton-content {
+  width: 260px;
+  height: 30px;
+  margin-top: 10px;
+  transform-origin: left;
+  animation: skeleton-stretch .5s -.3s linear infinite alternate;
+}
+@keyframes skeleton-stretch {
+from {
+    transform: scalex(1);
+}
+to {
+    transform: scalex(.3);
+}
 }
 </style></head>
   <body>
-    <div id="app">
-      <div data-server-rendered="true" class="skeleton page"><div class="skeleton-nav"></div> <div class="skeleton-swiper"></div> <ul class="skeleton-tabs"><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li><li class="skeleton-tabs-item"><span></span></li></ul> <div class="skeleton-banner"></div> <div class="skeleton-productions"></div><div class="skeleton-productions"></div><div class="skeleton-productions"></div><div class="skeleton-productions"></div><div class="skeleton-productions"></div><div class="skeleton-productions"></div></div>
-    </div>
+  <div id="app">
+    <div data-server-rendered="true" class="skeleton"><div class="skeleton-head"></div> <div class="skeleton-body"><div class="skeleton-title"></div> <div class="skeleton-content"></div></div></div>
+  </div>
     <script src="/dist/build.js"></script>
   </body>
 </html>
