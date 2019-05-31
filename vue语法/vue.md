@@ -1,6 +1,6 @@
 # Vue语法简介
 ## 一、v-的属性及方法
-####1.v-html绑定HTML代码
+#### 1.v-html绑定HTML代码
 使用 v-html 指令用于输出 html 代码：
 ```html
 <div id="app">
@@ -24,7 +24,7 @@ new Vue({
 </div>
 ```
 #### 2.v-model(数据的双向绑定)
-v-model通常用于数据的双向绑定，进而来实现数据共享：一般v-model主要用于绑定输入框，进而取值。
+v-model通常用于数据的双向绑定，进而来实现数据共享：一般`v-model`主要用于绑定输入框，进而取值。
 ```html
 <div id="modelOne">
 <input v-model="message" placeholder="编辑">
@@ -39,8 +39,9 @@ new Vue({
 })
 ```
 >如下图所示，通过在输入框输入不同的值，下面的p标签的内容也会跟随着input框值的变化而变化，进而实现了一个简单的数据双向绑定。
+
 ![model](image/model.gif)
-####3.v-if v-show v-for 列表条件渲染
+#### 3.v-if v-show v-for 列表条件渲染
 (1).v-if  
  `v-if` 是条件渲染指令，它根据表达式的真假来删除和插入元素，它的基本语法如下：`v-if="expression"`  
 `expression` 是一个返回`bool`值的表达式，表达式可以是一个`bool`属性，也可以是一个返回`bool`的运算式。
@@ -89,6 +90,7 @@ export default {
 }
 ```
 >页面显示：“今天天气不错，我们出去逛街吧？”  
+
 (3)v-show  
 另一个用于根据条件展示元素的选项是 v-show 指令。用法大致和`v-if`是一样的：
 ```html
@@ -97,6 +99,7 @@ export default {
 不同的是带有 `v-show` 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 `display:none`。  
 v-if当条件判断为`false`，会实现真正的渲染，不会保留在DOM中
 >注意，v-show 不支持 <template> 元素，也不支持 v-else。
+
 (4).v-for 列表渲染  
 所谓列表渲染就是将一个对象或者数组进行循环遍历，将其数据展示在页面上。
 ```html
@@ -124,8 +127,11 @@ export default {
 }
 ```
 页面展示效果如下:  
+
 ![hero](image/hero.png)  
+
 >注：我们请求后台数据，一般都是用`v-for`来将数据展示到页面上,配合`v-if`来实现不同权限的管理与显示。
+
 ####4.v-bind(绑定属性)
 使用 `v-bind` 指令用于绑定属性：通过v-bind来动态的绑定一些属性(id,class,src等等)
 ```html
@@ -171,8 +177,10 @@ var app5 = new Vue({
 });
 ```
 效果如下：  
+
 ![click](image/click.gif)
 >注：通常情况下，v-bind,v-on通常有两种缩写方式。  
+
 v-bind缩写
 ```html
 <!-- 完整语法 -->
@@ -189,10 +197,8 @@ v-on缩写
 ```
 ## 二、子父组件的相互传值
 ####1.父传子(Prop 传递数据)
-prop 是父组件用来传递数据的一个自定义属性。
-
-父组件的数据需要通过 props 把数据传给子组件，子组件需要显式地用 props 选项声明 "prop"
-
+prop 是父组件用来传递数据的一个自定义属性。  
+父组件的数据需要通过 props 把数据传给子组件，子组件需要显式地用 props 选项声明 "prop"  
 我们也可以动态的绑定父组件传递的数据，然后子组件用props接收父组件传递的属性及属性值。
 ```html
 // 父组件
