@@ -1,6 +1,6 @@
 # Vue语法简介
 ## 一、v-的属性及方法
-#### 1.v-html绑定HTML代码
+### 1.v-html绑定HTML代码
 使用 v-html 指令用于输出 html 代码：
 ```html
 <div id="app">
@@ -23,7 +23,7 @@ new Vue({
 </div>
 </div>
 ```
-#### 2.v-model(数据的双向绑定)
+### 2.v-model(数据的双向绑定)
 v-model通常用于数据的双向绑定，进而来实现数据共享：一般`v-model`主要用于绑定输入框，进而取值。
 ```html
 <div id="modelOne">
@@ -41,8 +41,8 @@ new Vue({
 >如下图所示，通过在输入框输入不同的值，下面的p标签的内容也会跟随着input框值的变化而变化，进而实现了一个简单的数据双向绑定。
 
 ![model](image/model.gif)
-#### 3.v-if v-show v-for 列表条件渲染
-(1).v-if  
+### 3.v-if v-show v-for 列表条件渲染
+##### (1).v-if  
  `v-if` 是条件渲染指令，它根据表达式的真假来删除和插入元素，它的基本语法如下：`v-if="expression"`  
 `expression` 是一个返回`bool`值的表达式，表达式可以是一个`bool`属性，也可以是一个返回`bool`的运算式。
 ```html
@@ -72,7 +72,7 @@ export default {
     <p >Hello, Henry Lee</p>
 </div>
 ```
-(2).v-else  
+##### (2).v-else  
 v-else 指令可以为 v-if 添加一个 else 模块：
 ```html
 <div id="app">
@@ -91,7 +91,7 @@ export default {
 ```
 >页面显示：“今天天气不错，我们出去逛街吧？”  
 
-(3)v-show  
+##### (3)v-show  
 另一个用于根据条件展示元素的选项是 v-show 指令。用法大致和`v-if`是一样的：
 ```html
 <h1 v-show="ok">Hello!</h1>
@@ -100,7 +100,7 @@ export default {
 v-if当条件判断为`false`，会实现真正的渲染，不会保留在DOM中
 >注意，v-show 不支持 <template> 元素，也不支持 v-else。
 
-(4).v-for 列表渲染  
+##### (4).v-for 列表渲染  
 所谓列表渲染就是将一个对象或者数组进行循环遍历，将其数据展示在页面上。
 ```html
 <div id="app">
@@ -132,7 +132,7 @@ export default {
 
 >注：我们请求后台数据，一般都是用`v-for`来将数据展示到页面上,配合`v-if`来实现不同权限的管理与显示。
 
-####4.v-bind(绑定属性)
+###  4.v-bind(绑定属性)
 使用 `v-bind` 指令用于绑定属性：通过v-bind来动态的绑定一些属性(id,class,src等等)
 ```html
 <div id="app">
@@ -154,7 +154,7 @@ export  default {
     <div id="box"></div>
 </div>
 ```
-####5.v-on绑定方法
+### 5.v-on绑定方法
 v-on 指令可以绑定事件监听器，通过该监听器可以vue示例中定义的方法：
 ```html
 <div id="app-5">
@@ -196,7 +196,7 @@ v-on缩写
 <a @click="doSomething"></a>
 ```
 ## 二、子父组件的相互传值
-####1.父传子(Prop 传递数据)
+### 1.父传子(Prop 传递数据)
 prop 是父组件用来传递数据的一个自定义属性。  
 父组件的数据需要通过 props 把数据传给子组件，子组件需要显式地用 props 选项声明 "prop"  
 我们也可以动态的绑定父组件传递的数据，然后子组件用props接收父组件传递的属性及属性值。
@@ -230,7 +230,7 @@ export default {
 }
 </script>
 ```
-####2.子传父(Emit事件（key,value）)
+### 2.子传父(Emit事件（key,value）)
 
 父组件是使用 props 传递数据给子组件，但如果子组件要把数据传递回去，就需要使用Emit事件！
 
@@ -291,7 +291,7 @@ export default {
 </script>
 ```
 ##三、插槽
-##### 1、单个插槽
+### 1、单个插槽
 ```html
 <template>
     <div>
@@ -319,7 +319,7 @@ export default {
 </div>
 ```
 > 提示：插槽样式在子父组件中都可以设置，所以在命名class时一定要注意。
-##### 2、具名插槽
+### 2、具名插槽
 ```html
 <template>
     <div>
@@ -345,7 +345,7 @@ export default {
 
 ![slot](image/slot02.jpeg)
 
-##### 3、作用域插槽
+### 3、作用域插槽
 作用域插槽是一种特殊类型的插槽，用作一个（能被传递数据的）可重用模板，来代替已经渲染好的元素。
 
 子传父。即长什么样，怎么布局由父级决定，而数据源则由子级决定。如：
