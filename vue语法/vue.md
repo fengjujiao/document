@@ -1,3 +1,9 @@
+---
+title: Vue常用语法
+date: 2019-06-01 20:58:00
+tags:
+cover_picture: /images/timg.jpg
+---
 # Vue语法简介
 ## 一、v-的属性及方法
 ### 1.v-html绑定HTML代码
@@ -90,7 +96,6 @@ export default {
 }
 ```
 >页面显示：“今天天气不错，我们出去逛街吧？”  
-
 ##### (3)v-show  
 另一个用于根据条件展示元素的选项是 v-show 指令。用法大致和`v-if`是一样的：
 ```html
@@ -98,8 +103,7 @@ export default {
 ```
 不同的是带有 `v-show` 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 `display:none`。  
 v-if当条件判断为`false`，会实现真正的渲染，不会保留在DOM中
->注意，v-show 不支持 <template> 元素，也不支持 v-else。
-
+> 注意，v-show 不支持 template 元素，也不支持 v-else。
 ##### (4).v-for 列表渲染  
 所谓列表渲染就是将一个对象或者数组进行循环遍历，将其数据展示在页面上。
 ```html
@@ -343,7 +347,31 @@ export default {
 ```
 效果如下所示：
 
-![slot](image/slot02.jpeg)
+![slot1](image/slot02.jpeg)
+>提示:引用多个插槽，通过借助“solt”属性和“name”属性实现绑定来控制solt对应插入，如果我不用name和slot属性。
+```html
+<template>
+    <div>
+        父组件
+        <Child>
+            <p>我是插槽1</p>
+            <p>我是插槽2</p>
+        </Child>
+    </div>
+</template>
+```
+```html
+<template>
+    <div>
+        子组件
+        <slot></slot>
+        <hr />
+        <slot></slot>
+    </div>
+</template>
+```
+结果如下,显然不是我们想要的结果。 
+![slot02](image/slot01.jpeg)
 
 ### 3、作用域插槽
 作用域插槽是一种特殊类型的插槽，用作一个（能被传递数据的）可重用模板，来代替已经渲染好的元素。
